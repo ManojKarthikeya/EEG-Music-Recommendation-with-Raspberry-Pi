@@ -4,8 +4,8 @@ from spotipy.oauth2 import SpotifyClientCredentials, SpotifyOAuth
 from tqdm import tqdm
 import time
 import requests
-import numpy as np
-from keras.models import load_model
+# import numpy as np
+# from keras.models import load_model
 from threading import Thread
 
 import json
@@ -27,24 +27,24 @@ load_dotenv()
 ngrok_url = os.environ.get("NGROK_URL")
 
 
-model = load_model("../network2.h5")
+# model = load_model("../network2.h5")
 
 
-def make_prediction(brain_waves):
-    prediction = model.predict([brain_waves])
-    return prediction
+# def make_prediction(brain_waves):
+#     prediction = model.predict([brain_waves])
+#     return prediction
 
 
-def classify_eeg_sentiment(prediction):
-    print(prediction)
-    [pred_val] = prediction
-    if pred_val < 0.25:
-        return 0
-    elif 0.25 < pred_val < 0.50:
-        return 1
-    elif 0.50 < pred_val < 0.75:
-        return 2
-    return 3
+# def classify_eeg_sentiment(prediction):
+#     print(prediction)
+#     [pred_val] = prediction
+#     if pred_val < 0.25:
+#         return 0
+#     elif 0.25 < pred_val < 0.50:
+#         return 1
+#     elif 0.50 < pred_val < 0.75:
+#         return 2
+    # return 3
 
 
 def get_random_search_term():
