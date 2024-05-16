@@ -47,7 +47,7 @@ class ThinkGear(object):
             i += 1 #add 1 each time to avoid getting stuck on unused bytes
 
 val_data = {}
-eeg_device = ThinkGear("COM7")
+eeg_device = ThinkGear("COM3")
 app = Flask(__name__)
 
 @app.route("/eeg_data")
